@@ -24,7 +24,7 @@
                 unset($_SESSION['msg']);
             }
         ?>
-        <a href="outros.php" >Não é aluno? Clique aqui</a> <br>
+        <a href="cadastrar.php" >Não é aluno? Clique aqui</a> <br>
     </form>
 </body>
 
