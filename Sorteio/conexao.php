@@ -1,3 +1,4 @@
+//realiza a conexão com o bd
 <?php
     $dbHost = 'localhost';
     $dbUserName = 'root';
