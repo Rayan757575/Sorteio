@@ -8,7 +8,7 @@ O objetivo do projeto foi auxiliar minha instituição de ensino em eventos.
 ## Funcionalidade
 O programa funciona da seguinte maneira: 
 
-Os presentes no evento irão colocar sua matricula(código) no computador, que estará com o arquivo ['logar.php](https://github.com/Rayan757575/Sorteio/blob/main/Sorteio/logar.php) aberto;
+Os presentes no evento irão colocar sua matricula(código) no computador, que estará com o arquivo [logar.php](https://github.com/Rayan757575/Sorteio/blob/main/Sorteio/logar.php) aberto;
 
 Quando quiser, o regente do evento irá abrir o arquivo [TelaSorteio.php](https://github.com/Rayan757575/Sorteio/blob/main/Sorteio/TelaSorteio.php) e realizar o(s) sorteio(s).
 
