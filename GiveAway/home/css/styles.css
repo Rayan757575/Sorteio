@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* style das telas de cadastros*/
+main {
+    background-color: #f1f1f1;
+}
+
+.div-form {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    gap: 20vh;
+    align-items: center;
+}
+
+/*permite a rolagem da tabela dos cadastrados*/
+.table-wrapper {
+    max-height: 40vh;
+    overflow-y: auto;
+    display: flex;
+}
+
+/*fixa o cabeçalho da tabea*/
+th {
+    position: sticky;
+    top: 0;
+    vertical-align: bottom;
+}
