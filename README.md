@@ -12,8 +12,8 @@ Os presentes no evento irão colocar sua matricula(código) no computador;
 Quando quiser, o regente do evento irá abrir o arquivo [sorteio/index.php](https://github.com/Rayan757575/Sorteio/blob/main/GiveAway/sorteio/index.php) e realizar o(s) sorteio(s) do(s) brinde.
 
 ## Como executar
-Para executar você deve criar o banco de dados ( scripit na pasta [BD](https://github.com/Rayan757575/Sorteio/blob/main/GiveAway/BD) )e importar os dados da planilha para a tabela alunos.
+Para executar você deve criar o banco de dados ( scripit na pasta [BD](https://github.com/Rayan757575/Sorteio/blob/main/GiveAway/BD) )e importar os dados da planilha com o registros dos alunos para a tabela alunos ( exemplo de planilhha em [planilhas](https://github.com/Rayan757575/Sorteio/blob/main/planilhas) ).
 
-Além disso, rodar o código em um servidor e fazer as alterações necessárias.
+Além disso, ´necessário rodar o código em um servidor e fazer as alterações necessárias.
 
 
