@@ -9,10 +9,10 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM participantes;"; //recebe o numero de participantes  
     $command = $pdo->prepare($sql);
     $command->execute();
-    $participantes = $command->fetch(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
+    $participantes = $command->fetchAll(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
 
     $quantidadeParticipantes = count($participantes); // recebe a quantidade de participantes
-    $NumeroGanhador = rand(1, $quantidadeParticipantes); //recebe o id do ganhador
+    $NumeroGanhador = rand(1, $quantidadeParticipantes); //sorteia um numero com base na quantidade de pessoas
 
     //sorteia outro caso já tenha sido sorteado
     $acabou = false;
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         $command->execute();
 
         if ($command -> rowCount() == 1) {
-            $NumeroGanhador = rand(1, $quantidadeParticipantes); //recebe o id do ganhador
+            $NumeroGanhador = rand(1, $quantidadeParticipantes); //sorteia um numero com base na quantidade de pessoas
         } else {
             $acabou = true;
             //insere o numero já sorteado
@@ -37,8 +37,9 @@ if (isset($_POST['submit'])) {
     $command = $pdo->prepare($sql);
     $command->execute();
     $ganhador = $command->fetch(PDO::FETCH_ASSOC);  // RECEBE O VALOR DAS PESQUISAS
-
-    $_SESSION['msg3'] = "<h2>O ganhador(a) é <strong style = 'color: green'>$ganhador</strong>!</h2>";
+    $nome = implode(',', $ganhador);
+ 
+    $_SESSION['msg3'] = "<h2>O ganhador(a) é <strong style = 'color: green'>$nome</strong>!</h2>";
     header("Location: ./index.php");
 }else{
     echo "Acesso indevido!!!";

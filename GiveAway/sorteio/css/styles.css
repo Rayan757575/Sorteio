@@ -19,8 +19,8 @@ main {
 }
 
 /*permite a rolagem da tabela dos premiados*/
-.table-wrapper2 {
-    max-height: 27vh;
+.table-wrapper {
+    max-height: 35vh;
     overflow-y: auto;
     display: flex;
     width: 100vw;
