@@ -14,6 +14,6 @@ Quando quiser, o regente do evento irá abrir o arquivo [sorteio/index.php](http
 ## Como executar
 Para executar você deve criar o banco de dados ( scripit na pasta [BD](https://github.com/Rayan757575/Sorteio/blob/main/GiveAway/BD) )e importar os dados da planilha com o registros dos alunos para a tabela alunos ( exemplo de planilha em [planilhas](https://github.com/Rayan757575/Sorteio/blob/main/planilha) ).
 
-Além disso, ´necessário rodar o código em um servidor e fazer as alterações necessárias.
+Além disso, é necessário rodar o código em um servidor e fazer as alterações necessárias.
 
 
