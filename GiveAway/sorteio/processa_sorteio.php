@@ -1,51 +1,45 @@
 <?php
-    session_start();
+session_start();
+
+if (isset($_POST['submit'])) {
+
     //conecta com o arquivo que faz a conexão com o banco de dados
-    include_once('../backEnd/conexao.php');
+    include_once('../adm/conexao.php');
 
-    //recebe o nome dos participantes dos 5 dias
-    $result = mysqli_query($conexao, "SELECT Nome FROM participantes");
+    $sql = "SELECT * FROM participantes;"; //recebe o numero de participantes  
+    $command = $pdo->prepare($sql);
+    $command->execute();
+    $participantes = $command->fetch(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
 
-    /*
-        //insere o resultado da consulta no bd 
-        while ($participantes = mysqli_fetch_assoc($result)) {
-            $insere = mysqli_query($conexao, "INSERT INTO premiados(Nome) VALUES ('$participantes[Nome]');"); 
-        } 
-    */
+    $quantidadeParticipantes = count($participantes); // recebe a quantidade de participantes
+    $NumeroGanhador = rand(1, $quantidadeParticipantes); //recebe o id do ganhador
 
-    if(isset($_POST['submit'])){
+    //sorteia outro caso já tenha sido sorteado
+    $acabou = false;
+    do {
+        $sql = "SELECT numeros FROM sorteados where $NumeroGanhador = numeros;"; //recebe o nome do proprietário do número sorteado 
+        $command = $pdo->prepare($sql);
+        $command->execute();
 
-        //echo "<body style='background-image: url(confetti-4.gif)'> </body>";
+        if ($command -> rowCount() == 1) {
+            $NumeroGanhador = rand(1, $quantidadeParticipantes); //recebe o id do ganhador
+        } else {
+            $acabou = true;
+            //insere o numero já sorteado
+            $sql = "INSERT INTO sorteados(numeros) VALUES ('$NumeroGanhador');";
+            $command = $pdo->prepare($sql);
+            $command->execute();
+        }
+    } while ($acabou == false);
 
-        $result = mysqli_query($conexao, "SELECT * FROM participantes;");//recebe o numero de participantes  
-        $participantes = $result->fetch_All(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
+    //pega o Nome do ganhador
+    $sql = "SELECT Nome FROM participantes where $NumeroGanhador = ID;";
+    $command = $pdo->prepare($sql);
+    $command->execute();
+    $ganhador = $command->fetch(PDO::FETCH_ASSOC);  // RECEBE O VALOR DAS PESQUISAS
 
-        $quantidadeParticipantes = count($participantes); // recebe a quantidade de participantes
-        $NumeroGanhador = rand(1, $quantidadeParticipantes);//recebe o id do ganhador
-
-        //sorteia outro caso já tenha sido sorteado
-        $acabou = false;
-        do {
-            //teste para ver se já foi sorteado
-            $result = mysqli_query($conexao, "SELECT numeros FROM sorteados where $NumeroGanhador = numeros;");
-            $resultado = $result->fetch_All(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
-
-            if(count($resultado) > 0){
-                $NumeroGanhador = rand(1, $quantidadeParticipantes); //recebe o id do ganhador
-            }else{
-                $acabou = true;
-                //insere o numero já sorteado
-                $result = mysqli_query($conexao, "INSERT INTO sorteados(numeros) VALUES ('$NumeroGanhador');");
-            }
-        } while ($acabou == false);
-
-        //pega o Nome do ganhador
-        $result = mysqli_query($conexao, "SELECT Nome FROM participantes where $NumeroGanhador = ID;"); 
-        $ganhador = $result->fetch_All(PDO::FETCH_ASSOC); // RECEBE O VALOR DAS PESQUISAS
-        $ganhador = $ganhador[0][0];
-
-        $_SESSION['msg3'] = "<h2>O ganhador(a) é <strong style = 'color: green'>$ganhador</strong>!</h2>";
-        header("Location: ./index.php"); 
-    }
-
-?>
+    $_SESSION['msg3'] = "<h2>O ganhador(a) é <strong style = 'color: green'>$ganhador</strong>!</h2>";
+    header("Location: ./index.php");
+}else{
+    echo "Acesso indevido!!!";
+}

@@ -1,25 +1,26 @@
 /*CSS DA TELA DE SORTEIO*/
+main {
+    background-color: #f1f1f1;
+}
+
 .div-sorteio {
-    height: 65vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.div-h1 {
-    height: 10vh;
+.image {
+    height: 20vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blue;
-    color: white;
 }
 
 /*permite a rolagem da tabela dos premiados*/
 .table-wrapper2 {
-    max-height: 25vh;
+    max-height: 27vh;
     overflow-y: auto;
     display: flex;
     width: 100vw;
