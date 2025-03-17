@@ -64,6 +64,4 @@ Abra um Pull Request para revisão.
 
 ## Licença 📜
 
-Este projeto está sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
-
-Criado por Rayan Cata Preta durante o segundo ano do ensino médio. 🏫
+Criado por Rayan Cata Preta, durante o segundo ano do ensino médio. 🏫
