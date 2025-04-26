@@ -1,8 +1,12 @@
 # Give Away App 
 
+---
+
 ## Descrição 📝
 
 O Give Away App é um sistema desenvolvido com o intiuito de auxiliar minha instituição de ensino em eventos. O programa utiliza a matrícula dos alunos para registrar presença e realizar sorteios de brindes. 
+
+---
 
 ## Funcionalidades ⚙️
 
@@ -11,6 +15,8 @@ O Give Away App é um sistema desenvolvido com o intiuito de auxiliar minha inst
 🎲 Sorteio aleatório entre os alunos presentes no evento.
 
 🖥️ Interface simples e intuitiva para organização de eventos.
+
+---
 
 ## Tecnologias Utilizadas 🛠️
 
@@ -21,6 +27,8 @@ O Give Away App é um sistema desenvolvido com o intiuito de auxiliar minha inst
 - Ferramenta de Gerenciamento: phpMyAdmin 🖧
 
 - Planilhas: Importação de dados a partir de arquivos com matrículas e nomes dos alunos 📊
+
+---
 
 ## Como Executar o Projeto 🚀
 
@@ -48,6 +56,8 @@ Os participantes do evento devem inserir suas matrículas no sistema.
 
 Quando desejar, o organizador do evento pode iniciar o sorteio acessando [sorteio/index.php](https://github.com/Rayan757575/Sorteio/blob/main/GiveAway/sorteio/index.php) e realizar a seleção aleatória dos vencedores.
 
+---
+
 ## Contribuição 🤝
 
 Se desejar contribuir com melhorias para o projeto, siga os seguintes passos:
@@ -61,6 +71,8 @@ Commit suas alterações (git commit -m 'Adicionando nova funcionalidade').
 Envie suas alterações para o repositório (git push origin minha-feature).
 
 Abra um Pull Request para revisão.
+
+---
 
 ## Licença 📜
 
